@@ -1,0 +1,8 @@
+[alias]
+	st = status
+	ls = ls-files
+	br = branch
+	co = checkout
+[user]
+	email = naoki_tomii@bmpe.t.u-tokyo.ac.jp
+	name = Naoki Tomii

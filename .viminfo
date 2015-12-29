@@ -1,0 +1,1457 @@
+# この viminfo ファイルは Vim 7.4 によって生成されました.
+# 変更する際には十分注意してください!
+
+# このファイルが書かれた時の 'encoding' の値
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# 最後の 検索パターン:
+~Msle0~/\<AgentLoader\>
+
+# 最後の Substitute 検索パターン:
+~MSle0&\t
+
+# 最後に置換された文字列:
+$   
+
+# コマンドライン 項目の履歴 (新しいものから古いものへ):
+:q
+:w
+:e ~/
+:e ~/download/DQN-chainer/
+:e /usr/local/lib/python2.7/dist-packages/rlglue/
+:vnew
+:Tlist
+:split
+:e ~/simenv/ripple/build/agent.py
+:e ~/simenv/ripple/src/
+:e ~/simenv/ripple/
+:e ~/simenv/ripple/agent/
+:e ~/download/python-codec/examples/
+:vnew 
+:e ~/download/
+:wq
+:e ~/download/Arcade-Learning-Environment-0.5.1/
+:%s/\t/   /gc
+:e /usr/local/lib/python2.7/dist-packages/
+:e /usr/lib/python2.7/dist-packages/
+:%s/skeleton_a/RippleA/gc
+:e .
+:q!
+:e ~/.zshenv
+:e ~
+:e ~/.vimrc
+:e 
+:e simenv//rlglue-3.04/c-codec-2.0/examples/skeleton-example/
+:%s/obs_size/SIZE_OBS/gc
+:set hlsearch
+:e ~/simenv/ripple/src
+:e ~/simenv/ripple/build/
+:e ~/simenv/ripple/src/main.cpp
+:e ~/simenv/ripple/src/Heart.hpp
+:e ~/simenv/ripple/src/Heart.cpp
+:NeoBundleInstall
+:NeoBundle
+:e ~/simenv/ripple/build/Makefile.mono
+:e ~/simenv/ripple/build/Makefile.environment
+:e ~/simenv/ripple/build/Makefile.
+:e ~/simenv/ripple/build/Makefile
+:%s/LFLAGS/LDFLAGS/gc
+:vnew ./main.cpp
+:e download/rlglue-3.04/c-codec-2.0/
+:%s/SkeletonEnvironment/RippleEnvironment/gc
+:%s/SkeltonEnvironment/RippleEnvironment/g
+:e ./Makefile
+:e ../build/
+:e ../skeleton-example/
+:'<,'>q
+
+# 検索文字列 項目の履歴 (新しいものから古いものへ):
+? \<AgentLoader\>
+?/host
+?/Network
+? \<Network\>
+? \<kLocalHost\>
+? \<s_replay\>
+? \<84\>
+? \<experienceReplay\>
+? \<episode_end_flag\>
+? \<state_dash\>
+? \<e_greedy\>
+? \<state_\>
+? \<stockExperience\>
+? \<D\>
+? \<data_size\>
+? \<optimizers\>
+? \<q_value\>
+? \<Q\>
+?/F
+?/model
+? \<s\>
+? \<state\>
+?/DQN
+? \<obs_processed\>
+? \<obs_array\>
+?/observation
+?/self.DQN
+?/\<initial_exploration\>
+? \<initial_exploration\>
+? \<DQN_class\>
+?/cuda
+? \<USE_RLGLUE\>
+? \<LIBS_RLGLUE\>
+?/rlglue
+? \<lastObservation\>
+? \t
+?/\t
+? \<thisIntAction\>
+? \<Action\>
+?/Action
+?/RL_Abs
+?/obser
+?/rl
+?/skeleton_a
+? skeleton_a
+?/skeleton_
+?/skeleton
+?/PYENV
+?/pyenv
+?/SIZE_OBS
+
+# 式 項目の履歴 (新しいものから古いものへ):
+
+# 入力行 項目の履歴 (新しいものから古いものへ):
+@agent.py
+@RippleEnvironment.cpp
+@Makefile.env
+
+# 入力行 項目の履歴 (新しいものから古いものへ):
+
+# レジスタ:
+"0	LINE	0
+	class skeleton_agent(Agent):
+		randGenerator=Random()
+		lastAction=Action()
+		lastObservation=Observation()
+		
+		def agent_init(self,taskSpec):
+			#See the sample_sarsa_agent in the mines-sarsa-example project for how to parse the task spec
+			self.lastAction=Action()
+			self.lastObservation=Observation()
+			
+		def agent_start(self,observation):
+			#Generate random action, 0 or 1
+			thisIntAction=self.randGenerator.randint(0,1)
+			returnAction=Action()
+			returnAction.intArray=[thisIntAction]
+			
+			lastAction=copy.deepcopy(returnAction)
+			lastObservation=copy.deepcopy(observation)
+	
+			return returnAction
+		
+		def agent_step(self,reward, observation):
+			#Generate random action, 0 or 1
+			thisIntAction=self.randGenerator.randint(0,1)
+			returnAction=Action()
+			returnAction.intArray=[thisIntAction]
+			
+			lastAction=copy.deepcopy(returnAction)
+			lastObservation=copy.deepcopy(observation)
+	
+			return returnAction
+		
+		def agent_end(self,reward):
+			pass
+		
+		def agent_cleanup(self):
+			pass
+		
+		def agent_message(self,inMessage):
+			if inMessage=="what is your name?":
+				return "my name is skeleton_agent, Python edition!";
+			else:
+				return "I don't know how to respond to your message";
+	
+	
+	if __name__=="__main__":
+		AgentLoader.loadAgent(skeleton_agent())
+"1	LINE	0
+	
+"2	LINE	0
+	import random
+"3	LINE	0
+	#
+"4	LINE	0
+		char task_spec[200];
+"5	LINE	0
+	
+"6	LINE	0
+		char* task_spec="VERSION RL-Glue-3.0 PROBLEMTYPE episodic DISCOUNTFACTOR 1.0 OBSERVATIONS INTS (0 20) ACTIONS INTS (0 1)  REWARDS (-1.0 1.0)  EXTRA RippleEnvironment(C/C++) by Naoki Tomii.";
+"7	LINE	0
+	   int argc = 3;
+	   char** argv = static_cast<char**>(calloc(sizeof(char*), argc));
+	   for(int i=0; i < argc; i++){
+	      argv[i] = static_cast<char*>(calloc(sizeof(char), 20 ));
+	   }
+	   sprintf(argv[0], "RippleEnvironment");
+	   sprintf(argv[1], "-f");
+	   sprintf(argv[2], "data");
+	   
+	   MPI_Init (&argc, &argv);
+	   Epetra_MpiComm Comm (MPI_COMM_WORLD);
+	   if ( Comm.MyPID() == 0 ){
+	       std::cout << "% using MPI" << std::endl;
+	   }
+	
+	   GetPot command_line (argc, argv);
+	   const std::string data_file_name = command_line.follow ("data", 2, "-f", "--file");
+	   GetPot dataFile (data_file_name);
+	   ptrHeart.reset( new LifeV::Heart(dataFile) );
+	   std::cout << "dbg1" << std::endl;
+	
+	   for(int i = 0; i < argc; i++){
+	      free(argv[i]);
+	   }
+	   free(argv);
+	
+"8	LINE	0
+		if(current_state>=20){
+			current_state=20;
+			episode_over=1;
+			the_reward=1;
+		}
+"9	LINE	0
+	
+""-	CHAR	0
+	_
+
+# ファイルマーク:
+'0  1  2  ~/simenv/.gitignore
+'1  19  0  ~/.vimrc
+'2  1  7  ~/simenv/ripple/build/runRL.sh
+'3  4  0  ~/simenv/ripple/build/runRL.sh
+'4  35  19  /usr/local/lib/python2.7/dist-packages/rlglue/agent/AgentLoader.py
+'5  3  0  ~/download/Arcade-Learning-Environment/makefile.unix
+'6  7  15  ~/download/Arcade-Learning-Environment/makefile.unix
+'7  5  0  ~/download/Arcade-Learning-Environment/ale.cfg
+'8  15  0  ~/download/Arcade-Learning-Environment-0.5.1/README.md
+'9  3  0  ~/vimfiler:default
+
+# ジャンプリスト (新しいものが先):
+-'  1  2  ~/simenv/.gitignore
+-'  8  0  ~/
+-'  1  0  ~/
+-'  1  0  ~/download/DQN-chainer
+-'  19  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  1  7  ~/simenv/ripple/build/runRL.sh
+-'  4  0  ~/simenv/ripple/build/runRL.sh
+-'  35  19  /usr/local/lib/python2.7/dist-packages/rlglue/agent/AgentLoader.py
+-'  4  0  /usr/local/lib/python2.7/dist-packages/rlglue
+-'  32  1  /usr/local/lib/python2.7/dist-packages/rlglue/agent/ClientAgent.py
+-'  100  19  /usr/local/lib/python2.7/dist-packages/rlglue/agent/ClientAgent.py
+-'  33  0  /usr/local/lib/python2.7/dist-packages/rlglue/agent/ClientAgent.py
+-'  6  0  /usr/local/lib/python2.7/dist-packages/rlglue
+-'  27  0  /usr/local/lib/python2.7/dist-packages/rlglue/agent/AgentLoader.py
+-'  17  1  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  10  2  ~/download/DQN-chainer
+-'  16  0  ~/download/DQN-chainer/dqn_agent_nature.py
+-'  9  2  ~/download/DQN-chainer
+-'  1  0  /usr/local/lib/python2.7/dist-packages/rlglue/agent/Agent.py
+-'  3  0  /usr/local/lib/python2.7/dist-packages/rlglue
+-'  32  0  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  107  15  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  226  21  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  247  21  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  98  21  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  87  24  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  95  41  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  131  8  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  144  12  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  183  33  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  220  18  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  135  8  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  222  0  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  143  8  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  202  12  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  82  8  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  225  21  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  53  13  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  27  7  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  49  32  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  132  23  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  80  21  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  43  20  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  42  15  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  41  15  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  40  15  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  39  21  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  14  28  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  79  15  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  129  13  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  97  0  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  73  12  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  111  24  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  136  8  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  30  8  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  21  0  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  23  4  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  198  19  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  174  13  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  212  81  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  208  24  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  100  16  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  206  24  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  24  4  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  168  15  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  48  8  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  249  8  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  25  0  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  3  0  ~/download
+-'  4  0  ~/download
+-'  1  0  ~/download
+-'  3  0  ~/download/Arcade-Learning-Environment/makefile.unix
+-'  35  19  /usr/local/lib/python2.7/dist-packages/rlglue/agent/AgentLoader.py
+-'  4  0  /usr/local/lib/python2.7/dist-packages/rlglue
+-'  32  1  /usr/local/lib/python2.7/dist-packages/rlglue/agent/ClientAgent.py
+-'  100  19  /usr/local/lib/python2.7/dist-packages/rlglue/agent/ClientAgent.py
+-'  33  0  /usr/local/lib/python2.7/dist-packages/rlglue/agent/ClientAgent.py
+-'  6  0  /usr/local/lib/python2.7/dist-packages/rlglue
+-'  27  0  /usr/local/lib/python2.7/dist-packages/rlglue/agent/AgentLoader.py
+-'  17  1  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  16  0  ~/download/DQN-chainer/dqn_agent_nature.py
+-'  1  0  /usr/local/lib/python2.7/dist-packages/rlglue/agent/Agent.py
+-'  3  0  /usr/local/lib/python2.7/dist-packages/rlglue
+-'  32  0  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  107  15  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  226  21  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  247  21  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  98  21  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  87  24  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  95  41  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  131  8  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  144  12  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  183  33  ~/download/DQN-chainer/dqn_agent_nips.py
+-'  8  0  ~/
+-'  1  0  ~/
+-'  1  0  ~/download/DQN-chainer
+-'  19  0  ~/.vimrc
+
+# ファイル内マークの履歴 (新しいものから古いもの):
+
+> ~/simenv/.gitignore
+	"	1	2
+	^	1	8
+	.	1	2
+	+	1	2
+
+> ~/.vimrc
+	"	19	0
+	^	43	12
+	.	43	12
+	+	20	0
+	+	19	0
+	+	35	6
+	+	43	12
+
+> ~/simenv/ripple/build/runRL.sh
+	"	1	7
+	^	1	8
+	.	1	7
+	+	1	25
+	+	2	47
+	+	3	14
+	+	2	25
+	+	3	30
+	+	4	18
+	+	1	7
+	+	2	20
+	+	3	13
+	+	4	18
+	+	3	0
+	+	4	0
+	+	2	19
+	+	1	7
+
+> ~/download/DQN-chainer/dqn_agent_nips.py
+	"	146	0
+
+> ~/download/Arcade-Learning-Environment/__Tag_List__
+	"	68	4
+	.	93	0
+	+	137	0
+	+	152	0
+	+	164	0
+	+	116	0
+	+	116	0
+	+	3	0
+	+	35	0
+	+	3	0
+	+	37	0
+	+	49	0
+	+	65	0
+	+	70	0
+	+	93	0
+
+> ~/simenv/ripple/src/RippleAgent.cpp
+	"	1	0
+
+> ~/simenv/ripple/build/agent.py
+	"	26	3
+
+> /usr/local/lib/python2.7/dist-packages/rlglue/network/Network.py
+	"	102	0
+
+> /usr/local/lib/python2.7/dist-packages/rlglue/network/__init__.py
+	"	1	0
+
+> /usr/local/lib/python2.7/dist-packages/rlglue/agent/Agent.py
+	"	1	0
+
+> /usr/local/lib/python2.7/dist-packages/rlglue/agent/ClientAgent.py
+	"	32	1
+
+> /usr/local/lib/python2.7/dist-packages/rlglue/agent/AgentLoader.py
+	"	35	19
+
+> ~/download/DQN-chainer/dqn_agent_nature.py
+	"	16	0
+
+> ~/download/Arcade-Learning-Environment/makefile.unix
+	"	3	0
+	.	9	15
+	+	9	15
+
+> ~/download/Arcade-Learning-Environment/ale.cfg
+	"	5	0
+
+> ~/simenv/ripple/agent/agent.py
+	"	27	0
+	^	56	1
+	.	60	0
+	+	1	21
+	+	12	0
+	+	3	0
+	+	3	13
+	+	3	23
+	+	5	0
+	+	7	35
+	+	8	51
+	+	12	0
+	+	5	13
+	+	12	25
+	+	61	0
+	+	14	0
+	+	14	0
+	+	54	0
+	+	60	0
+	+	2	12
+	+	15	0
+	+	16	0
+	+	17	0
+	+	18	0
+	+	19	0
+	+	20	0
+	+	21	0
+	+	22	0
+	+	23	0
+	+	24	0
+	+	25	0
+	+	26	0
+	+	27	0
+	+	28	0
+	+	29	0
+	+	30	0
+	+	31	0
+	+	33	0
+	+	34	0
+	+	35	0
+	+	36	0
+	+	37	0
+	+	38	0
+	+	39	0
+	+	40	0
+	+	41	0
+	+	42	0
+	+	44	0
+	+	45	0
+	+	46	0
+	+	47	0
+	+	48	0
+	+	49	0
+	+	50	0
+	+	51	0
+	+	52	0
+	+	53	0
+	+	54	0
+	+	55	0
+	+	56	0
+	+	60	0
+
+> ~/download/python-codec/examples/skeleton/skeleton_agent.py
+	"	29	0
+
+> /usr/local/lib/python2.7/dist-packages/rlglue/types.py
+	"	60	5
+
+> ~/download/Arcade-Learning-Environment-0.5.1/README.md
+	"	15	0
+
+> ~/vimfiler:default
+	"	3	0
+	.	18	0
+	+	1	0
+	+	51	0
+	+	51	0
+	+	51	0
+	+	51	0
+	+	51	0
+	+	50	0
+	+	1	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	49	0
+	+	34	0
+	+	35	0
+	+	48	0
+	+	1	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	1	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	0
+
+> ~/~
+	"	10	0
+	.	18	0
+	+	18	0
+
+> ~/.zshenv
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/.zshrc
+	"	69	0
+	^	2	16
+	.	2	15
+	+	3	0
+	+	2	15
+
+> /etc/profile.d/pyenv.sh
+	"	1	13
+	^	4	25
+	.	4	24
+	+	1	0
+	+	5	19
+	+	6	24
+	+	3	19
+	+	4	24
+
+> ~/simenv/ripple/src/RippleEnvironment.cpp
+	"	117	0
+	^	53	20
+	.	53	19
+	+	58	21
+	+	108	19
+	+	108	24
+	+	108	0
+	+	108	20
+	+	108	0
+	+	108	0
+	+	58	0
+	+	108	37
+	+	108	14
+	+	108	51
+	+	108	10
+	+	108	14
+	+	108	21
+	+	108	0
+	+	108	47
+	+	108	3
+	+	108	25
+	+	108	26
+	+	108	31
+	+	108	0
+	+	108	37
+	+	108	0
+	+	108	0
+	+	108	16
+	+	108	16
+	+	108	22
+	+	108	24
+	+	108	33
+	+	108	13
+	+	108	80
+	+	108	60
+	+	145	37
+	+	94	2
+	+	95	0
+	+	101	0
+	+	95	3
+	+	96	3
+	+	97	3
+	+	98	3
+	+	99	3
+	+	100	3
+	+	101	1
+	+	108	0
+	+	120	24
+	+	124	0
+	+	124	0
+	+	125	0
+	+	124	5
+	+	126	6
+	+	130	0
+	+	127	0
+	+	126	0
+	+	122	0
+	+	121	0
+	+	124	0
+	+	125	0
+	+	127	0
+	+	125	0
+	+	124	5
+	+	126	6
+	+	130	0
+	+	108	0
+	+	60	3
+	+	60	0
+	+	60	187
+	+	60	0
+	+	91	10
+	+	87	43
+	+	91	31
+	+	91	33
+	+	91	207
+	+	91	116
+	+	91	216
+	+	91	10
+	+	107	38
+	+	91	113
+	+	95	35
+	+	96	34
+	+	98	57
+	+	97	41
+	+	91	9
+	+	91	12
+	+	91	189
+	+	91	105
+	+	87	45
+	+	89	7
+	+	90	0
+	+	89	17
+	+	88	69
+	+	88	86
+	+	97	0
+	+	98	0
+	+	51	0
+	+	52	0
+	+	53	17
+	+	91	6
+	+	87	31
+	+	88	74
+	+	53	19
+
+> ~/simenv/ripple/src/RippleExperiment.cpp
+	"	42	1
+
+> ~/simenv/ripple/src/Heart.hpp
+	"	42	0
+	^	108	0
+	.	108	0
+	+	104	0
+	+	108	0
+
+> ~/simenv/ripple/src/Heart.cpp
+	"	232	12
+	n	58	2
+
+> ~/simenv/ripple/src/main.cpp
+	"	79	4
+	^	85	4
+	.	85	0
+	+	54	31
+	+	55	23
+	+	54	18
+	+	55	19
+	+	54	10
+	+	55	10
+	+	54	10
+	+	55	16
+	+	54	16
+	+	55	26
+	+	62	62
+	+	63	30
+	+	64	19
+	+	63	30
+	+	64	18
+	+	63	33
+	+	64	21
+	+	66	12
+	+	65	19
+	+	66	0
+	+	85	0
+
+> ~/__Tag_List__
+	"	7	4
+	.	16	0
+	+	90	0
+	+	107	0
+	+	120	0
+	+	147	0
+	+	90	0
+	+	90	0
+	+	75	0
+	+	62	0
+	+	61	0
+	+	47	0
+	+	31	0
+	+	16	0
+
+> ~/simenv/ripple/build/Makefile.environment
+	"	3	0
+	^	15	43
+	.	15	43
+	+	22	22
+	+	24	0
+	+	24	0
+	+	24	0
+	+	24	0
+	+	24	0
+	+	3	25
+	+	1	24
+	+	11	0
+	+	22	0
+	+	23	0
+	+	11	0
+	+	11	0
+	+	3	0
+	+	11	0
+	+	3	6
+	+	8	19
+	+	14	0
+	+	15	0
+	+	14	16
+	+	21	24
+	+	24	0
+	+	10	3
+	+	14	0
+	+	10	4
+	+	11	0
+	+	12	10
+	+	13	0
+	+	14	4
+	+	21	12
+	+	15	33
+	+	3	0
+	+	3	18
+	+	15	57
+	+	15	57
+	+	3	0
+	+	18	32
+	+	3	0
+	+	15	0
+	+	3	0
+	+	15	43
+
+> ~/simenv/ripple/build/Makefile.common
+	"	16	0
+	.	18	0
+	+	18	0
+
+> ~/simenv/ripple/src/heart.cpp
+	"	11	0
+	^	39	8
+	.	39	0
+	+	99	0
+	+	100	4
+	+	100	0
+	+	365	0
+	+	87	0
+	+	86	4
+	+	101	0
+	+	39	0
+
+> ~/simenv/ripple/src/HeartDiffusionSolver.cpp
+	"	185	4
+
+> ~/simenv/rlglue-3.04/c-codec-2.0/examples/skeleton-example/SkeletonExperiment.c
+	"	62	1
+
+> ~/simenv/rlglue-3.04/c-codec-2.0/examples/skeleton-example/SkeletonAgent.c
+	"	97	30
+
+> ~/simenv/ripple/src/HeartDiffusionSolver.hpp
+	"	83	4
+
+> ~/simenv/ripple/build/Makefile
+	"	4	9
+	^	1	25
+	.	1	24
+	+	1	0
+	+	6	900
+	+	6	0
+	+	6	0
+	+	6	0
+	+	6	0
+	+	1	19
+	+	1	26
+	+	1	26
+	+	1	25
+	+	4	9
+	+	1	52
+	+	1	25
+	+	1	2
+	+	1	7
+	+	1	211
+	+	4	8
+	+	4	19
+	+	1	0
+	+	1	19
+	+	6	7
+	+	1	0
+	+	1	14
+	+	4	9
+	+	6	0
+	+	4	9
+	+	6	0
+	+	5	0
+	+	6	0
+	+	6	0
+	+	1	0
+	+	1	0
+	+	1	5
+	+	6	18
+	+	1	22
+	+	1	4
+	+	6	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	41
+	+	1	0
+	+	4	12
+	+	1	3
+	+	10	50
+	+	1	0
+	+	1	0
+	+	1	113
+	+	10	0
+	+	1	0
+	+	9	13
+	+	1	852
+	+	1	230
+	+	1	18
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	5
+	+	1	0
+	+	1	5
+	+	1	0
+	+	1	1
+	+	1	0
+	+	1	0
+	+	1	81
+	+	1	0
+	+	1	8
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	5	1
+	+	6	1
+	+	7	35
+	+	8	27
+	+	1	14
+	+	1	29
+	+	1	15
+	+	1	880
+	+	1	24
+
+> ~/simenv/ripple/build/Makefile.mono
+	"	21	0
+	^	9	10
+	.	22	0
+	+	1	0
+	+	22	0
+	+	1	0
+	+	1	23
+	+	1	0
+	+	1	0
+	+	1	0
+	+	7	0
+	+	1	0
+	+	1	0
+	+	2	0
+	+	1	0
+	+	3	0
+	+	5	0
+	+	22	0
+	+	22	3
+	+	22	35
+	+	3	27
+	+	4	24
+	+	22	0
+	+	8	0
+	+	9	9
+	+	22	0
+
+> ~/download/rlglue-3.04/c-codec-2.0/examples/skeleton-example/SkeletonEnvironment.c
+	"	5	0
+
+> ~/main.cpp
+	"	1	0
+
+> ~/download/rlglue-3.04/c-codec-2.0/examples/mines-sarsa-example-cpp/Makefile.environment
+	"	1	0
+
+> ~/simenv/ripple/build/Makefile.env
+	"	1	0
+	^	17	1
+	.	1	0
+	+	1	0
+	+	16	0
+	+	17	1
+	+	18	0
+	+	19	0
+	+	20	0
+	+	21	0
+	+	22	0
+	+	1	0
+
+> ~/download/rlglue-3.04/c-codec-2.0/examples/mines-sarsa-example-cpp/Makefile
+	"	8	0
+
+> ~/download/rlglue-3.04/c-codec-2.0/examples/mines-sarsa-example-cpp/vimfiler:default
+	"	13	0
+	.	17	0
+	+	1	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+	+	17	0
+
+> ~/download/rlglue-3.04/c-codec-2.0/examples/mines-sarsa-example-cpp/~
+	"	17	0
+	.	20	0
+	+	2	0
+	+	21	0
+	+	21	0
+	+	3	0
+	+	4	0
+	+	20	0
+	+	20	0
+	+	20	0
+	+	20	0
+	+	20	0
+
+> ~/simenv/ripple/src/vimfiler:default
+	"	16	2
+	.	16	0
+	+	1	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+
+> ~/download/rlglue-3.04/c-codec-2.0/examples/skeleton-example/Makefile
+	"	1	0
+
+> ~/.pyenv/.zshenv
+	"	1	0
+
+> ~/simenv/ripple/build/data
+	"	105	2
+	^	105	21
+	.	105	20
+	+	99	21
+	+	86	20
+	+	90	18
+	+	89	19
+	+	83	19
+	+	90	19
+	+	86	20
+	+	89	19
+	+	111	18
+	+	110	26
+	+	111	27
+	+	105	20
+
+> ~/simenv/ripple/build/error.txt
+	"	4	0
+
+> ~/simenv/lifev/lifev/heart/solver/HeartMonodomainData.cpp
+	"	125	4
+
+> ~/simenv/lifev/.gitignore
+	"	2	0
+	^	2	0
+	.	1	7
+	+	1	7
+
+> ~/simenv/lifev/lifev/heart/solver/HeartFunctors.cpp
+	"	111	4
+	^	611	75
+	.	611	74
+	+	563	74
+	+	571	72
+	+	579	93
+	+	587	95
+	+	595	90
+	+	603	77
+	+	611	74
+
+> ~/simenv/ripple/build/heart.xmf
+	"	741	13
+
+> /etc/ssh/sshd_config
+	"	1	0
+
+> ~/simenv/ripple/src/heart.hpp
+	"	124	0
+
+> ~/simenv/ripple/.gitignore
+	"	1	6
+	^	1	7
+	.	1	6
+	+	1	5
+	+	2	0
+	+	1	6
+
+> ~/simenv/lifev/lifev/heart/examples/CMakeLists.txt
+	"	6	2
+	.	6	0
+	+	6	0
+
+> ~/simenv/lifev/lifev/heart/examples/ripple/CMakeLists.txt
+	"	7	0
+	.	2	0
+	+	8	19
+	+	9	20
+	+	7	0
+	+	8	7
+	+	7	27
+	+	10	0
+	+	16	0
+	+	10	1
+	+	16	3
+	+	15	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	7	36
+	+	5	0
+	+	5	22
+	+	7	42
+	+	12	0
+	+	10	1
+	+	15	0
+	+	12	52
+	+	7	0
+	+	7	30
+	+	15	0
+	+	12	29
+	+	13	25
+	+	15	0
+	+	13	24
+	+	16	0
+	+	7	7
+	+	12	0
+	+	13	0
+	+	14	0
+	+	7	0
+	+	7	0
+	+	7	34
+	+	5	1
+	+	5	0
+	+	5	0
+	+	5	0
+	+	5	0
+	+	7	0
+	+	7	0
+	+	7	27
+	+	7	0
+	+	7	0
+	+	7	0
+	+	7	20
+	+	12	0
+	+	13	0
+	+	14	0
+	+	7	0
+	+	12	0
+	+	13	0
+	+	14	0
+	+	5	0
+	+	12	7
+	+	13	0
+	+	14	0
+	+	12	0
+	+	6	0
+	+	5	18
+	+	7	22
+	+	13	4
+	+	5	27
+	+	7	0
+	+	13	19
+	+	5	0
+	+	2	0
+
+> ~/simenv/lifev/lifev/heart/examples/ripple/main.cpp
+	"	68	6
+	^	68	17
+	.	68	6
+	+	47	28
+	+	68	6
+
+> ~/simenv/lifev/lifev/heart/CMakeLists.txt
+	"	1	0
+
+> ../src/CMakeLists.txt
+	"	1	0
+
+> ~/simenv/lifev/build/lifev/heart/examples/ripple/data
+	"	99	18
+	.	99	18
+	+	99	18
+
+> ../src/main.cpp
+	"	1	0
+
+> ~/simenv/lifev/lifev/heart/examples/ripple/environment.cpp
+	"	52	0
+	^	52	0
+	.	51	42
+	+	51	42
+
+> ~/simenv/lifev/lifev/heart/examples/ripple/heart.cpp
+	"	117	4
+
+> ~/simenv/lifev/build/lifev/heart/examples/basic_example/data
+	"	83	0
+	.	78	0
+	+	112	22
+	+	99	20
+	+	107	3
+	+	99	20
+	+	86	18
+	+	83	25
+	+	83	21
+	+	86	0
+	+	99	21
+	+	85	0
+	+	85	20
+	+	83	0
+	+	85	0
+	+	78	0
+	+	85	0
+	+	82	0
+	+	81	0
+	+	80	0
+	+	79	0
+	+	78	0
+
+> ~/simenv/lifev/lifev/navier_stokes/examples/cavity_stokes/cavity_stokes.cpp
+	"	116	5
+
+> ~/simenv/lifev/lifev/navier_stokes/examples/cavity_stokes/CMakeLists.txt
+	"	5	0
+
+> ~/simenv/lifev/lifev/multiscale/testsuite/onedmodel/main.cpp
+	"	130	8
+	.	130	4
+	+	130	4
+
+> ~/simenv/lifev/lifev/multiscale/testsuite/onedmodel/main.cpp:
+	"	1	0
+
+> ~/simenv/lifev/lifev/fsi/examples/example_SmoothAneurysm/main.cpp
+	"	494	42
+	.	495	0
+	+	494	0
+	+	495	0
+
+> ~/simenv/lifev/lifev/heart/examples/basic_example/heart.cpp
+	"	175	12
+	.	175	8
+	+	74	10
+	+	158	8
+	+	175	8
+	m	74	14
+
+> ~/simenv/lifev/lifev/heart/examples/basic_example/main.cpp
+	"	63	42
+	.	63	38
+	+	63	38
+
+> ~/simenv/lifev/lifev/heart/solver/HeartMonodomainSolver.hpp
+	"	335	12
+	^	61	0
+	.	335	8
+	+	60	20
+	+	335	8
+
+> ~/simenv/lifev/lifev/structure/examples/example_principalTensionsInflationExtensions/main.cpp
+	"	321	11
+	.	492	45
+	+	488	8
+	+	492	4
+	+	193	4
+	+	488	38
+	+	492	45
+
+> ~/simenv/lifev/lifev/structure/examples/example_tractionWithSymmetry/main.cpp
+	"	623	8
+	.	623	4
+	+	334	4
+	+	786	33
+	+	790	40
+	+	220	4
+	+	624	0
+	+	671	8
+	+	672	8
+	+	673	8
+	+	787	0
+	+	786	8
+	+	790	4
+	+	623	4
+
+> ~/simenv/lifev/lifev/structure/examples/example_creatingDamagedZone/main.cpp
+	"	340	49
+	.	340	45
+	+	336	8
+	+	340	4
+	+	251	4
+	+	336	38
+	+	340	45
+
+> ~/simenv/lifev/lifev/structure/examples/example_CookMembrane/main.cpp
+	"	1	0
+	^	746	13
+	.	288	4
+	+	747	0
+	+	746	12
+	+	750	45
+	+	746	38
+	+	386	4
+	+	288	4
+
+> ~/simenv/lifev/lifev/structure/examples/example_InflationExtension/main.cpp
+	"	1	0
+	^	479	10
+	.	479	9
+	+	807	8
+	+	811	4
+	+	807	38
+	+	811	45
+	+	353	4
+	+	479	9
+
+> ~/simenv/lifev/lifev/structure/testsuite/structuralsolver/main.cpp
+	"	332	9
+	.	332	4
+	+	766	8
+	+	770	4
+	+	509	51
+	+	510	81
+	+	511	49
+	+	512	85
+	+	513	18
+	+	521	16
+	+	584	23
+	+	766	38
+	+	770	45
+	+	494	4
+	+	575	11
+	+	579	11
+	+	580	11
+	+	581	11
+	+	582	11
+	+	229	4
+	+	332	4
+
+> ~/simenv/lifev/lifev/structure/testsuite/principalTensions/main.cpp
+	"	729	49
+	.	729	45
+	+	299	4
+	+	725	8
+	+	729	4
+	+	725	38
+	+	729	45
+
+> ~/simenv/lifev/lifev/structure/testsuite/time_advance_ii/timeAdvance.cpp
+	"	147	8
+	.	147	4
+	+	147	4
+
+> ~/simenv/lifev/lifev/structure/testsuite/time_advance_ii/main.cpp
+	"	106	44
+	.	106	40
+	+	102	0
+	+	103	0
+	+	102	38
+	+	106	40
+
+> ~/simenv/lifev/lifev/structure/testsuite/time_advance_i/timeAdvance.cpp
+	"	149	8
+	.	149	4
+	+	149	4
+
+> ~/simenv/lifev/lifev/structure/testsuite/time_advance_i/main.cpp
+	"	106	8
+	.	106	0
+	+	106	0
+
+> ~/simenv/lifev/lifev/navier_stokes/examples/ETpseudo_fsi/ETRobinMembraneSolver.cpp
+	"	119	8
+	.	119	4
+	+	119	4
+
+> ~/simenv/lifev/lifev/navier_stokes/examples/cylinder/cylinder.cpp
+	"	140	21
+	.	334	4
+	+	334	4
+
+> ~/simenv/lifev/lifev/navier_stokes/examples/cylinder/cylinder.cpp:334
+	"	1	0
+
+> ~/simenv/lifev/lifev/navier_stokes/examples/oseen_assembler/main.cpp
+	"	437	17
+	.	437	12
+	+	437	12
+
+> ~/simenv/lifev/lifev/navier_stokes/examples/resistanceBCs/resistance.cpp
+	"	110	21
+	.	272	4
+	+	272	4
+
+> ~/simenv/lifev/lifev/navier_stokes/testsuite/exporter_ensight_to_hdf5/ensightToHdf5.cpp
+	"	93	8
+	.	93	4
+	+	93	4
+
+> ~/simenv/lifev/lifev/navier_stokes/testsuite/basic_test/navierStokes.hpp
+	"	264	11
+	.	352	4
+	+	319	4
+	+	329	4
+	+	352	4
+
+> ~/simenv/lifev/lifev/navier_stokes/algorithm/PreconditionerSIMPLE.cpp
+	"	77	8
+	^	48	0
+	.	77	4
+	+	47	20
+	+	77	4
+
+> ~/simenv/lifev/lifev/level_set/solver/LevelSetSolver.hpp
+	"	463	53
+	^	70	20
+	.	463	49
+	+	70	19
+	+	185	27
+	+	559	16
+	+	519	0
+	+	518	66
+	+	559	16
+	+	221	58
+	+	463	49
+
+> ~/simenv/lifev/lifev/one_d_fsi/solver/OneDFSISolver.cpp
+	"	472	49
+	.	472	45
+	+	472	45
+
+> ~/simenv/lifev/lifev/fsi/solver/FSIOperator.hpp
+	"	896	14
+	^	90	20
+	.	896	10
+	+	93	0
+	+	91	0
+	+	94	0
+	+	94	0
+	+	92	0
+	+	90	19
+	+	888	10
+	+	892	10
+	+	896	10
+
+> ~/simenv/lifev/lifev/bc_interface/3D/function/fsi/BCInterfaceFunctionParserFSI3D.cpp
+	"	89	30
+	^	1	8
+	.	2	0
+	+	1	0
+	+	2	0
+
+> ~/simenv/lifev/lifev/structure/solver/StructuralOperator.hpp
+	"	941	42
+	.	941	38
+	+	940	38
+	+	941	38

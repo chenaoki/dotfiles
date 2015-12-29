@@ -1,0 +1,13 @@
+autoload -U compinit
+compinit
+setopt auto_cd
+setopt auto_pushd
+setopt correct
+bindkey "\e[Z" reverse-menu-complete
+
+autoload colors
+colors
+local p_cdir="%B%F{blue}[%~]%f%b"$'\n'
+local p_info="%n@%m"
+PROMPT="$p_cdir$p_info > "
+alias ll='ls -l'
