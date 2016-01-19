@@ -142,7 +142,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
 \ 'objc' : $HOME . '/.vim/dict/objc.dict'
 \ }
 " 日本語をキャッシュしない
-let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+" let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " 補完候補の数
 let g:neocomplcache_max_list = 5
 " 1番目の候補を自動選択
