@@ -9,11 +9,15 @@ endif
 " NeoBundleを初期化
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-"
-" インストールするプラグインをここに記述
+NeoBundleFetch 'Shouge/neobundle.vim'
+
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'taglist.vim'
@@ -79,7 +83,7 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
 "unite prefix key.
 nnoremap [unite] <Nop>
-nmap <Space>f [unite]
+nmap , [unite]
 
 let g:vimfiler_as_default_explorer=1
 
@@ -124,3 +128,65 @@ function! s:unite_my_settings()"{{{
     nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
     inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
 endfunction"}}}
+
+"-------------------------
+" Shougo/neocomplcache
+"-------------------------
+" 起動時に有効
+let g:neocomplcache_enable_at_startup = 1
+" snippet ファイルの保存先
+let g:neocomplcache_snippets_dir='~/.vim/snippets'
+" dictionary
+let g:neocomplcache_dictionary_filetype_lists = {
+\ 'default' : '',
+\ 'objc' : $HOME . '/.vim/dict/objc.dict'
+\ }
+" 日本語をキャッシュしない
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
+" 補完候補の数
+let g:neocomplcache_max_list = 5
+" 1番目の候補を自動選択
+let g:neocomplcache_enable_auto_select = 1
+" 辞書読み込み
+noremap  <Space>d. :<C-u>NeoComplCacheCachingDictionary<Enter>
+" <TAB> completion.
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" C-jでオムニ補完
+inoremap <expr> <C-j> &filetype == 'vim' ? "\<C-x>\<C-v>\<C-p>" :"\<C-x>\<C-o>\<C-p>"
+" C-kを押すと行末まで削除
+inoremap <C-k> <C-o>D
+" C-nでneocomplcache補完
+inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
+" C-pでkeyword補完
+inoremap <expr><C-p> pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>"
+" 補完候補が表示されている場合は確定。そうでない場合は改行
+inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
+" 補完をキャンセル
+inoremap <expr><C-e>  neocomplcache#close_popup()
+
+"-------------------------
+" Shougo/neosnippet
+"-------------------------
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB>
+\ pumvisible() ? "\<C-n>" :
+\ neosnippet#expandable_or_jumpable() ?
+\    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+"-------------------------
+" Others
+"-------------------------
+nnoremap <F5> :<C-u>edit ~/.vimrc<CR>
+nnoremap <F6> :<C-u>source ~/.vimrc<CR>
