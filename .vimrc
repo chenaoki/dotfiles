@@ -35,7 +35,8 @@ syntax enable
 set background=dark
 set hlsearch
 autocmd ColorScheme * highlight Comment ctermfg=22 guifg=#008800
-colorscheme solarized
+" colorscheme solarized
+colorscheme desert
 
 "-------------------------
 " Color scheme
