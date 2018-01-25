@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-import os, sys, commands, glob
+import os, sys, glob
 
 if __name__ == '__main__':
-  objs = commands.getoutput('find ./ -maxdepth 1').split()
+  objs = glob.glob('./.*')
   for obj in objs:
     if not '.git' in obj and obj != './' and not 'install.py' in obj:
       cmd = 'rm -rf ~/{0}'.format(obj)
