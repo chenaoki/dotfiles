@@ -89,3 +89,10 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 export PATH="/usr/local/cuda/bin:$PATH"
+
+git config --global user.name "chenaoki"
+git config --global user.email "cheanoki@gmail.com"
+git config --global alias.st "status"
+git config --global alias.co "checkout"
+git config --global alias.br "branch"
+git config --global alias.ls "ls-files"
