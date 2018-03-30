@@ -1,1 +1,3 @@
 .zsh-update
+.vim/bundle/*
+.vim/.netrwhist
