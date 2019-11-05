@@ -96,3 +96,5 @@ git config --global alias.st "status"
 git config --global alias.co "checkout"
 git config --global alias.br "branch"
 git config --global alias.ls "ls-files"
+
+export DOCKER_HOST=tcp://localhost:2375
